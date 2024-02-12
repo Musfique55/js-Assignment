@@ -1,7 +1,7 @@
 function calculateMoney(ticketSale){
     // You have to write your code here
     if(ticketSale < 0){
-        return '"Please Provide Positive Amount"';
+        return 'Please Provide Positive Amount';
     }
     const ticketPrice = 120;
     const GuardFee = 500;
@@ -28,11 +28,10 @@ function checkName(name) {
     }
 }
 
-
 function deleteInvalids(array) {
     // You have to write your code here
     if(!Array.isArray(array)){
-        return '"Invalid Array"';
+        return 'Invalid Array';
     }
     let newArr = [];
     for(let ar of array){
@@ -42,7 +41,6 @@ function deleteInvalids(array) {
     }
     return newArr;
 }
-
 
 function password(obj) {
     //write your code here
@@ -67,9 +65,9 @@ function password(obj) {
 function monthlySavings(arr , livingCost) {
     // You have to write your code here
     if(!Array.isArray(arr)){
-        return 'Invalid input';
+        return 'invalid input';
     }else if(typeof livingCost !== 'number'){
-        return 'Invalid input';
+        return 'invalid input';
     }
 
     let income = 0;
@@ -79,15 +77,17 @@ function monthlySavings(arr , livingCost) {
             incomeWithTax+= ar;
             const tax = ar * 20 /100;
             incomeWithTax = incomeWithTax  -  tax;
-            income =incomeWithTax + ar;        
-        }else{
+            income+= incomeWithTax;   
+        } else{
             income+= ar;
         }
     }
+    // console.log(income);
     const totalSavings  = income - livingCost;
     if(totalSavings >= 0){
         return totalSavings;
     } else{
-        return '"earn more"';
+        return 'earn more';
     }
 }
+console.log(monthlySavings( [ 900 , 2700 , 3400] , 10000));
